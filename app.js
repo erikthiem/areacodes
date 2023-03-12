@@ -191,7 +191,7 @@ data = [
     // use a custom ludacris icon
     var ludacrisIcon = L.icon({
         iconUrl: 'ludacris.png',
-        iconSize: [32, 32], // set the size of the icon
+        iconSize: [64, 64], // set the size of the icon
         iconAnchor: [16, 32], // set the position of the anchor point relative to the icon
     });
 
