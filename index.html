@@ -5,9 +5,26 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-mY/M5TxW8Pv5X5kyytIzrxjTD2Q8RoSxSxI98tDz/+t0JF/FfaB4X4fTtuCxjjbzmZdI8CjLpTbYPdxzVYCEyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style>
 		#map { height: 600px; }
 		.popup { max-width: 400px; }
+    body {
+      background-image: url("Graffiti-Berlin-Wall.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @font-face {
+      font-family: 'Philly Sans';
+      src: url('PhillySans.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .leaflet-popup-content {
+      font-family: "Philly Sans", sans-serif;
+      font-weight: bold;
+    }
 	</style>
 </head>
 <body>

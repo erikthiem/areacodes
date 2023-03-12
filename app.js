@@ -181,18 +181,24 @@ data = [
 		const map = L.map('map').setView([37.09, -95.71], 4);
 
 		// Create a base layer
-		const baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-		});
+    const baseLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+      attribution: 'Map tiles by <a href="https://stamen.com/">Stamen Design</a>, under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Data by <a href="https://openstreetmap.org/">OpenStreetMap</a>, under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY SA</a>.'
+    });
 
 		// Add the base layer to the map
 		map.addLayer(baseLayer);
 
+    // use a custom ludacris icon
+    var ludacrisIcon = L.icon({
+        iconUrl: 'ludacris.png',
+        iconSize: [32, 32], // set the size of the icon
+        iconAnchor: [16, 32], // set the position of the anchor point relative to the icon
+    });
+
 		// Loop through the locations in the data
 		data.forEach(location => {
 			// Create a marker for the location
-      debugger;
-			const marker = L.marker([location.lat, location.lng]).addTo(map);
+			const marker = L.marker([location.lat, location.lng], { icon: ludacrisIcon }).addTo(map);
 
 			// Attach a popup to the marker with the location's lyric
 			marker.bindPopup(`<strong>${location.code}</strong> - ${location.city}, ${location.state}<br>${location.lyric}`).on('mouseover', function() {
