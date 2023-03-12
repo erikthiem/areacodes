@@ -192,7 +192,7 @@ data = [
     var ludacrisIcon = L.icon({
         iconUrl: 'ludacris.png',
         iconSize: [64, 64], // set the size of the icon
-        iconAnchor: [16, 32], // set the position of the anchor point relative to the icon
+        iconAnchor: [16, 0], // set the position of the anchor point relative to the icon
     });
 
 		// Loop through the locations in the data
@@ -201,11 +201,9 @@ data = [
 			const marker = L.marker([location.lat, location.lng], { icon: ludacrisIcon }).addTo(map);
 
 			// Attach a popup to the marker with the location's lyric
-			marker.bindPopup(`<strong>${location.code}</strong> - ${location.city}, ${location.state}<br>${location.lyric}`).on('mouseover', function() {
+			marker.bindPopup(`<strong>${location.code}</strong> - ${location.city}, ${location.state}<br>${location.lyric}`).on('click', function() {
 				this.openPopup();
-			}).on('mouseout', function() {
-				this.closePopup();
-			});
+			})
 		});
 
 		// Add a layer control to the map
